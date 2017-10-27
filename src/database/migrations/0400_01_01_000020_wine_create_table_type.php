@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class VinipadDbCreateTableLang extends Migration
+class WineCreateTableType extends Migration
 {
 	/**
 	 * Run the migrations.
@@ -14,7 +14,7 @@ class VinipadDbCreateTableLang extends Migration
 	{
 		if(! Schema::hasTable('wine_type'))
 		{
-			Schema::create('admin_lang', function (Blueprint $table) {
+			Schema::create('wine_type', function (Blueprint $table) {
 				$table->engine = 'InnoDB';
 
                 $table->integer('id')->unsigned();
@@ -24,8 +24,8 @@ class VinipadDbCreateTableLang extends Migration
                 $table->timestamps();
                 $table->softDeletes();
 
-                $table->primary(['id', 'lang_id'], 'pk01_vinipad_db_grape');
-                $table->foreign('lang_id', 'fk01_vinipad_db_grape')
+                $table->primary(['id', 'lang_id'], 'pk01_wine_type');
+                $table->foreign('lang_id', 'fk01_wine_type')
                     ->references('id')
                     ->on('admin_lang')
                     ->onDelete('restrict')
@@ -41,6 +41,6 @@ class VinipadDbCreateTableLang extends Migration
 	 */
 	public function down()
 	{
-        Schema::dropIfExists('vinipad_db_grape');
+        Schema::dropIfExists('wine_type');
 	}
 }
