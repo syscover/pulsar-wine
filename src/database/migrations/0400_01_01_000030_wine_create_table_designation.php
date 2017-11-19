@@ -17,7 +17,7 @@ class CreateTableDesignation extends Migration
 			Schema::create('wine_designation', function (Blueprint $table) {
 				$table->engine = 'InnoDB';
 
-                $table->increments('id')->unsigned();
+                $table->increments('id');
                 $table->string('country_id', 2);
                 $table->string('name');
 
