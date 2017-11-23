@@ -17,8 +17,8 @@ class WineCreateTableGrape extends Migration
 			Schema::create('wine_grape', function (Blueprint $table) {
 				$table->engine = 'InnoDB';
 
-                $table->increments('id');
-                $table->integer('object_id')->unsigned();
+                $table->increments('ix');
+                $table->integer('id')->unsigned();
                 $table->string('lang_id', 2);
                 $table->string('name');
 
