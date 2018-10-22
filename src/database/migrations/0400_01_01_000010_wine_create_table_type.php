@@ -17,7 +17,6 @@ class WineCreateTableType extends Migration
 			Schema::create('wine_type', function (Blueprint $table) {
 				$table->engine = 'InnoDB';
 
-				
                 $table->increments('ix');
                 $table->integer('id')->unsigned();
                 $table->string('lang_id', 2);
