@@ -26,7 +26,7 @@ class WineCreateTableType extends Migration
                 $table->timestamps();
                 $table->softDeletes();
 
-                $table->primary(['id', 'lang_id'], 'pk01_wine_type');
+                $table->index(['id', 'lang_id'], 'ix01_wine_type');
                 $table->foreign('lang_id', 'fk01_wine_type')
                     ->references('id')
                     ->on('admin_lang')
