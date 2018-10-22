@@ -21,6 +21,8 @@ class WineCreateTableGrape extends Migration
                 $table->integer('id')->unsigned();
                 $table->string('lang_id', 2);
                 $table->string('name');
+                $table->text('description');
+                $table->json('data_lang')->nullable();
 
                 $table->timestamps();
                 $table->softDeletes();
