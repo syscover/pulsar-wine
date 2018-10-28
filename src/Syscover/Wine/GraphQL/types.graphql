@@ -1,0 +1,5 @@
+type WineWine {
+    id: Int!
+    name: String!
+    year: Int
+}

@@ -1,0 +1,5 @@
+input WineWineInput {
+    id: Int
+    name: String!
+    year: Int
+}

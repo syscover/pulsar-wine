@@ -1,0 +1,4 @@
+# Wine
+wineCreateWine(payload:WineWineInput!): WineWine @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\WineGraphQLService@create")
+wineUpdateWine(payload:WineWineInput!): WineWine @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\WineGraphQLService@update")
+wineDeleteWine(id:Int!): WineWine @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\WineGraphQLService@delete")
