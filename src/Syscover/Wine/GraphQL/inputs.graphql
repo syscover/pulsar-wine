@@ -1,5 +1,6 @@
 input WineWineInput {
     id: Int
+    lang_id: String
     name: String!
     year: Int
     is_product: Boolean!

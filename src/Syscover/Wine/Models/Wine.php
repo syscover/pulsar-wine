@@ -13,7 +13,7 @@ class Wine extends CoreModel
 {
 	protected $table        = 'wine_wine';
     protected $fillable     = ['name', 'year', 'is_product'];
-    public $with            = ['questions'];
+    // public $with            = ['product'];
     private static $rules   = [
         'name' => 'required'
     ];
