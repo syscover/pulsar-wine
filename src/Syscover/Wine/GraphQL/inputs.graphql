@@ -2,4 +2,6 @@ input WineWineInput {
     id: Int
     name: String!
     year: Int
+    is_product: Boolean!
+    product: MarketMarketable
 }

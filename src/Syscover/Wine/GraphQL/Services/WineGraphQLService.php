@@ -8,4 +8,11 @@ class WineGraphQLService extends CoreGraphQLService
 {
     protected $modelClassName = Wine::class;
     protected $serviceClassName = WineService::class;
+
+    public function create($root, array $args)
+    {
+        dd($args['payload']);
+
+        return $this->service->create($args['payload']);
+    }
 }
