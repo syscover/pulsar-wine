@@ -18,9 +18,10 @@ class WineCreateTableWine extends Migration
 				$table->engine = 'InnoDB';
 
                 $table->increments('id');
-                $table->string('name');
                 $table->integer('year')->nullable();
                 $table->boolean('is_product')->default(false);
+                $table->json('data_lang')->nullable();
+                $table->json('data')->nullable();
 
                 $table->timestamps();
                 $table->softDeletes();

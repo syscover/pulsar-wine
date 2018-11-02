@@ -1,5 +1,27 @@
 type WineWine {
+    data: Object
+    data_lang: [String]
     id: Int!
+    is_product: Boolean!
+    ix: Int!
     name: String!
+    tasting_note: String
     year: Int
+
+    # Marketable fields
+    # Marketable fields cann't to be required if marketable is optional
+    active: Boolean
+    categories: [MarketCategory]
+    lang_id: String
+    name: String
+    parent_id: Int
+    price_type_id: Int
+    product_class_tax_id: Int
+    sections: [MarketSection]
+    sku: String
+    slug: String
+    sort: Int
+    subtotal: Float
+    type_id: Int
+    weight: Float
 }

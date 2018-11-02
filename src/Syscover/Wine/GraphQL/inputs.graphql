@@ -1,8 +1,27 @@
 input WineWineInput {
+    data: Object
+    data_lang: [String]
     id: Int
+    is_product: Boolean!
     lang_id: String
     name: String!
+    tasting_note: String
     year: Int
-    is_product: Boolean!
-    product: MarketMarketable
+
+    # Marketable properties
+    active: Boolean
+    categories_id: [String]
+    lang_id: String
+    name: String
+    parent_id: Int
+    price: Float
+    price_type_id: Int
+    product_class_tax_id: Int
+    sections_id: [String]
+    sku: String
+    slug: String
+    sort: Int
+    subtotal: Float
+    type_id: Int
+    weight: Float
 }

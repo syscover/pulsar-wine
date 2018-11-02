@@ -4,4 +4,4 @@ wineWines(sql:[CoreSQLInput]): [WineWine!]! @field(resolver: "Syscover\\Wine\\Gr
 """ Query to get Wine """
 wineWine(sql:[CoreSQLInput]): WineWine @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\WineGraphQLService@find")
 """ Query to get Wines paginated """
-wineWinesPagination(sql:[CoreSQLInput]): CorePagination! @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\WineGraphQLService@paginate")
+wineWinesPagination(sql:[CoreSQLInput] filters:[CoreSQLInput]): CorePagination! @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\WineGraphQLService@paginate")
