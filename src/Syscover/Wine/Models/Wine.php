@@ -22,6 +22,10 @@ class Wine extends CoreModel
         'data_lang'                 => 'array',
         'data'                      => 'array'
     ];
+    protected $with         = [
+        'lang',
+        'products'
+    ];
     private static $rules   = [
         'name' => 'required'
     ];
@@ -36,11 +40,13 @@ class Wine extends CoreModel
         return $query
             ->join('wine_wine_lang', 'wine_wine.id', '=', 'wine_wine_lang.id')
             ->leftJoin('market_product', function ($join) {
-                $join
-                    ->on('wine_wine.id', '=', 'market_product.object_id')
+                $join->on('wine_wine.id', '=', 'market_product.object_id')
                     ->where('market_product.object_type', '=', 'Syscover\Wine\Models\Wine');
             })
-            ->leftJoin('market_product_lang', 'market_product.id', '=', 'market_product_lang.id')
+            ->leftJoin('market_product_lang',  function ($join) {
+                $join->on('market_product.id', '=', 'market_product_lang.id')
+                    ->on('market_product_lang.lang_id', '=', 'wine_wine_lang.lang_id');
+            })
             ->addSelect(
                 'market_product.*',
                 'market_product_lang.*',

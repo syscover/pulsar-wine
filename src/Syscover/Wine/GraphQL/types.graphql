@@ -10,14 +10,16 @@ type WineWine {
 
     # Marketable fields
     # Marketable fields cann't to be required if marketable is optional
+    products: [MarketProduct]
+
     active: Boolean
-    categories: [MarketCategory]
+    # categories: [MarketCategory]
     lang_id: String
     name: String
     parent_id: Int
     price_type_id: Int
     product_class_tax_id: Int
-    sections: [MarketSection]
+    # sections: [MarketSection]
     sku: String
     slug: String
     sort: Int
