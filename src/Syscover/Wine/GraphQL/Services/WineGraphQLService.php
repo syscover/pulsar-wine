@@ -24,7 +24,7 @@ class WineGraphQLService extends CoreGraphQLService
             $args['payload']['object_type']  = Wine::class;
             $args['payload']['object_id']    = $wine->id;
 
-            MarketableService::create($args['payload']);
+            MarketableService::create($args['payload'], $wine);
         }
 
         return $wine;
@@ -48,7 +48,7 @@ class WineGraphQLService extends CoreGraphQLService
             else
             {
                 // create product
-                MarketableService::create($args['payload']);
+                MarketableService::create($args['payload'], $wine);
             }
         }
         else

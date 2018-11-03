@@ -4,7 +4,10 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Syscover\Admin\Traits\Translatable;
 use Syscover\Core\Models\CoreModel;
+use Syscover\Market\Models\Category;
 use Syscover\Market\Models\Product;
+use Syscover\Market\Models\Section;
+use Syscover\Market\Models\Stock;
 
 /**
  * Class Wine
@@ -16,16 +19,19 @@ class Wine extends CoreModel
     use Translatable;
 
 	protected $table        = 'wine_wine';
-    protected $fillable     = ['year', 'is_product', 'data_lang', 'data'];
+    protected $fillable     = ['year', 'is_product', 'product_id', 'data_lang', 'data'];
     protected $casts        = [
         'is_product'                => 'boolean',
         'data_lang'                 => 'array',
         'data'                      => 'array'
     ];
     protected $with         = [
+        'categories',
         'lang',
-        'products'
+        'sections',
+        'stocks'
     ];
+
     private static $rules   = [
         'name' => 'required'
     ];
@@ -67,5 +73,38 @@ class Wine extends CoreModel
     public function products()
     {
         return $this->morphMany(Product::class, 'object', 'object_type', 'object_id', 'id');
+    }
+
+    public function categories()
+    {
+        return $this->belongsToMany(
+            Category::class,
+            'market_products_categories',
+            'product_id',
+            'category_id',
+            'product_id',
+            'id'
+        );
+    }
+
+    public function sections()
+    {
+        return $this->belongsToMany(
+            Section::class,
+            'market_products_sections',
+            'product_id',
+            'section_id',
+            'product_id',
+            'id'
+        );
+    }
+
+    public function stocks()
+    {
+        return $this->hasMany(
+            Stock::class,
+            'product_id',
+            'product_id'
+        );
     }
 }

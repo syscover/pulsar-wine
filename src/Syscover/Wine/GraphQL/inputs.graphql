@@ -1,4 +1,5 @@
 input WineWineInput {
+    attachments: [AdminAttachmentInput]
     data: Object
     data_lang: [String]
     id: Int
