@@ -57,7 +57,8 @@ class WineGraphQLService extends CoreGraphQLService
             $product = Product::where('object_type', Wine::class)->where('object_id', $wine->id)->first();
             if($product)
             {
-                SQLService::deleteRecord($product->id, Product::class, $args['payload']['lang_id'], ProductLang::class);
+                // if there are any product, delete all products from all langs, set base_lang to delete all langs
+                SQLService::deleteRecord($product->id, Product::class, base_lang(), ProductLang::class);
             }
         }
 
