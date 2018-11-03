@@ -10,6 +10,7 @@ class WineTableSeeder extends Seeder
         Model::unguard();
 
         $this->call(WinePackageTableSeeder::class);
+        $this->call(WineResourceTableSeeder::class);
 
         Model::reguard();
     }

@@ -62,7 +62,7 @@ class WineGraphQLService extends CoreGraphQLService
             }
         }
 
-        return $this->service->update($args['payload']);
+        return $wine;
     }
 
     public function delete($root, array $args)

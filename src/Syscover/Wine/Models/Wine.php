@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use Syscover\Admin\Models\Attachment;
 use Syscover\Admin\Traits\Translatable;
 use Syscover\Core\Models\CoreModel;
 use Syscover\Market\Models\Category;
@@ -106,5 +107,26 @@ class Wine extends CoreModel
             'product_id',
             'product_id'
         );
+    }
+
+    /**
+     * Is not possible add 'attachments' to $with parameter, it need to be instantiated to get lang parameter
+     * It's possible pass lang parameter with this method
+     *
+     * Product::with(['attachments' => function ($q) use ($langId) {
+     *   $q->where('admin_attachment.lang_id', $langId);
+     * }])->get();
+     */
+    public function attachments()
+    {
+        return $this->morphMany(
+            Attachment::class,
+            'object',
+            'object_type',
+            'object_id',
+            'id'
+        )
+            ->where('admin_attachment.lang_id', $this->lang_id ? $this->lang_id : user_lang())
+            ->orderBy('sort', 'asc');
     }
 }
