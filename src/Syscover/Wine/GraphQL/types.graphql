@@ -10,11 +10,15 @@ type WineWine {
     tasting_note: String
     year: Int
 
-    # Marketable fields
+    # Marketable columns
     # Marketable fields cann't to be required if is marketable is optional
     active: Boolean
     categories: [MarketCategory]
+    cost: Float
+    ends_at: String
+    ends_sale: String
     lang_id: String
+    limited_capacity: Int
     name: String
     parent_id: Int
     price_type_id: Int
@@ -23,6 +27,8 @@ type WineWine {
     sku: String
     slug: String
     sort: Int
+    starts_at: String
+    starts_sale: String
     subtotal: Float
     type_id: Int
     weight: Float

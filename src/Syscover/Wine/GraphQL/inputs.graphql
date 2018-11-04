@@ -9,10 +9,14 @@ input WineWineInput {
     tasting_note: String
     year: Int
 
-    # Marketable properties
+    # Marketable columns
     active: Boolean
     categories_id: [String]
+    cost: Float
+    ends_at: String
+    ends_sale: String
     lang_id: String
+    limited_capacity: Int
     name: String
     parent_id: Int
     price: Float
@@ -22,6 +26,8 @@ input WineWineInput {
     sku: String
     slug: String
     sort: Int
+    starts_at: String
+    starts_sale: String
     subtotal: Float
     type_id: Int
     weight: Float
