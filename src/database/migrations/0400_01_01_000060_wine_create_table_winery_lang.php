@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class WineCreateTableWineLang extends Migration
+class WineCreateTableWineryLang extends Migration
 {
 	/**
 	 * Run the migrations.
@@ -12,23 +12,24 @@ class WineCreateTableWineLang extends Migration
 	 */
 	public function up()
 	{
-		if (! Schema::hasTable('wine_wine_lang'))
+		if (! Schema::hasTable('wine_winery_lang'))
 		{
-			Schema::create('wine_wine_lang', function (Blueprint $table) {
+			Schema::create('wine_winery_lang', function (Blueprint $table) {
 				$table->engine = 'InnoDB';
 
                 $table->increments('ix');
 				$table->integer('id')->unsigned();
 				$table->string('lang_id', 2);
-                $table->string('name');
-                $table->string('slug');
-				$table->string('tasting_note')->nullable();
+                $table->text('excerpt')->nullable();
+                $table->text('header')->nullable();
+                $table->text('description')->nullable();
+
                 $table->json('data')->nullable();
 
                 $table->timestamps();
                 $table->softDeletes();
 				
-				$table->foreign('id', 'fk01_wine_wine_lang')
+				$table->foreign('id', 'fk01_wine_winery_lang')
 					->references('id')
 					->on('wine_wine')
 					->onDelete('cascade')
@@ -40,7 +41,6 @@ class WineCreateTableWineLang extends Migration
 					->onUpdate('cascade');
 
                 $table->index(['id', 'lang_id'], 'ix01_wine_wine_lang');
-                $table->index('slug', 'ix02_wine_wine_lang');
 			});
 		}
 	}
@@ -52,6 +52,6 @@ class WineCreateTableWineLang extends Migration
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('wine_wine_lang');
+		Schema::dropIfExists('wine_winery_lang');
 	}
 }

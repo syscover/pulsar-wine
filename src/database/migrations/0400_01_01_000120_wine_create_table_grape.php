@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class WineCreateTableType extends Migration
+class WineCreateTableGrape extends Migration
 {
 	/**
 	 * Run the migrations.
@@ -12,22 +12,25 @@ class WineCreateTableType extends Migration
 	 */
 	public function up()
 	{
-		if(! Schema::hasTable('wine_type'))
+		if(! Schema::hasTable('wine_grape'))
 		{
-			Schema::create('wine_type', function (Blueprint $table) {
+			Schema::create('wine_grape', function (Blueprint $table) {
 				$table->engine = 'InnoDB';
 
                 $table->increments('ix');
                 $table->integer('id')->unsigned();
                 $table->string('lang_id', 2);
                 $table->string('name');
+                $table->string('slug');
+                $table->text('description')->nullable();
                 $table->json('data_lang')->nullable();
 
                 $table->timestamps();
                 $table->softDeletes();
 
-                $table->index(['id', 'lang_id'], 'ix01_wine_type');
-                $table->foreign('lang_id', 'fk01_wine_type')
+                $table->index(['id', 'lang_id'], 'ix01_wine_grape');
+                $table->index('slug', 'ix02_wine_grape');
+                $table->foreign('lang_id', 'fk01_wine_grape')
                     ->references('id')
                     ->on('admin_lang')
                     ->onDelete('restrict')
@@ -43,6 +46,6 @@ class WineCreateTableType extends Migration
 	 */
 	public function down()
 	{
-        Schema::dropIfExists('wine_type');
+        Schema::dropIfExists('wine_grape');
 	}
 }
