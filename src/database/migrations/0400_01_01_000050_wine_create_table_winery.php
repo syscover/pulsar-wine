@@ -22,7 +22,7 @@ class WineCreateTableWinery extends Migration
                 $table->string('slug');
 
                 // geolocation data
-                $table->string('country_id', 2)->nullable();
+                $table->string('country_id', 2);
                 $table->string('territorial_area_1_id', 6)->nullable();
                 $table->string('territorial_area_2_id', 10)->nullable();
                 $table->string('territorial_area_3_id', 10)->nullable();
@@ -38,27 +38,22 @@ class WineCreateTableWinery extends Migration
                 $table->softDeletes();
 
                 $table->index('slug', 'ix01_wine_winery');
-                $table->foreign('lang_id', 'fk01_wine_winery')
-                    ->references('id')
-                    ->on('admin_lang')
-                    ->onDelete('restrict')
-                    ->onUpdate('cascade');
-                $table->foreign('country_id', 'fk02_wine_winery')
+                $table->foreign('country_id', 'fk01_wine_winery')
                     ->references('id')
                     ->on('admin_country')
                     ->onDelete('restrict')
                     ->onUpdate('cascade');
-                $table->foreign('territorial_area_1_id', 'fk03_wine_winery')
+                $table->foreign('territorial_area_1_id', 'fk02_wine_winery')
                     ->references('id')
                     ->on('admin_territorial_area_1')
                     ->onDelete('restrict')
                     ->onUpdate('cascade');
-                $table->foreign('territorial_area_2_id', 'fk04_wine_winery')
+                $table->foreign('territorial_area_2_id', 'fk03_wine_winery')
                     ->references('id')
                     ->on('admin_territorial_area_2')
                     ->onDelete('restrict')
                     ->onUpdate('cascade');
-                $table->foreign('territorial_area_3_id', 'fk05_wine_winery')
+                $table->foreign('territorial_area_3_id', 'fk04_wine_winery')
                     ->references('id')
                     ->on('admin_territorial_area_3')
                     ->onDelete('restrict')
