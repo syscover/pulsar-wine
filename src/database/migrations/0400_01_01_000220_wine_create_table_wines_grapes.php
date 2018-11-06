@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class MarketCreateTableWineriesAppellations extends Migration {
+class WineCreateTableWinesGrapes extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,15 +12,15 @@ class MarketCreateTableWineriesAppellations extends Migration {
 	 */
 	public function up()
 	{
-		if (! Schema::hasTable('wine_wineries_appellations'))
+		if (! Schema::hasTable('wine_wines_grapes'))
 		{
 			Schema::create('wine_wines_grapes', function (Blueprint $table) {
 				$table->engine = 'InnoDB';
 				
-				$table->integer('winery_id')->unsigned();
-				$table->integer('appellation_id')->unsigned();
+				$table->integer('wine_id')->unsigned();
+				$table->integer('grape_id')->unsigned();
 
-				$table->primary(['winery_id', 'appellation_id'], 'pk01_wine_wineries_appellations');
+				$table->primary(['wine_id', 'grape_id'], 'pk01_wine_wines_grapes');
 			});
 		}
 	}
@@ -32,6 +32,6 @@ class MarketCreateTableWineriesAppellations extends Migration {
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('wine_wineries_appellations');
+		Schema::dropIfExists('wine_wines_grapes');
 	}
 }
