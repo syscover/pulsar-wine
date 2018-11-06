@@ -1,4 +1,4 @@
-<?php namespace Syscover\Review;
+<?php namespace Syscover\Wine;
 
 use Illuminate\Support\ServiceProvider;
 
