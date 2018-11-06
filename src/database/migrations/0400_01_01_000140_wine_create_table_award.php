@@ -29,7 +29,7 @@ class WineCreateTableAward extends Migration
 
                 $table->index(['id', 'lang_id'], 'ix01_wine_award');
                 $table->index('slug', 'ix02_wine_award');
-                $table->foreign('lang_id', 'fk01_wine_pairing')
+                $table->foreign('lang_id', 'fk01_wine_award')
                     ->references('id')
                     ->on('admin_lang')
                     ->onDelete('restrict')
