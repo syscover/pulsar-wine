@@ -31,7 +31,7 @@ class WineCreateTableWineryLang extends Migration
 				
 				$table->foreign('id', 'fk01_wine_winery_lang')
 					->references('id')
-					->on('wine_wine')
+					->on('wine_winery')
 					->onDelete('cascade')
 					->onUpdate('cascade');
 				$table->foreign('lang_id', 'fk02_wine_wine_lang')
