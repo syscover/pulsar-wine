@@ -34,13 +34,13 @@ class WineCreateTableWineryLang extends Migration
 					->on('wine_winery')
 					->onDelete('cascade')
 					->onUpdate('cascade');
-				$table->foreign('lang_id', 'fk02_wine_wine_lang')
+				$table->foreign('lang_id', 'fk02_wine_winery_lang')
 					->references('id')
 					->on('admin_lang')
 					->onDelete('restrict')
 					->onUpdate('cascade');
 
-                $table->index(['id', 'lang_id'], 'ix01_wine_wine_lang');
+                $table->index(['id', 'lang_id'], 'ix01_wine_winery_lang');
 			});
 		}
 	}

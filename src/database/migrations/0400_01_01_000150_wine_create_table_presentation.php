@@ -14,7 +14,7 @@ class WineCreateTablePresentation extends Migration
 	{
 		if(! Schema::hasTable('wine_presentation'))
 		{
-			Schema::create('wine_type', function (Blueprint $table) {
+			Schema::create('wine_presentation', function (Blueprint $table) {
 				$table->engine = 'InnoDB';
 
                 $table->increments('ix');
