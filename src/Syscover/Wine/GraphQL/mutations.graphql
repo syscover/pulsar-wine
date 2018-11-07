@@ -1,3 +1,8 @@
+# Appellation
+wineCreateAppellation(payload:WineAppellationInput!): WineAppellation @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\AppellationGraphQLService@create")
+wineUpdateAppellation(payload:WineAppellationInput!): WineAppellation @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\AppellationGraphQLService@update")
+wineDeleteAppellation(id:Int! lang_id:String!): WineAppellation @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\AppellationGraphQLService@delete")
+
 # Wine
 wineCreateWine(payload:WineWineInput!): WineWine @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\WineGraphQLService@create")
 wineUpdateWine(payload:WineWineInput!): WineWine @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\WineGraphQLService@update")

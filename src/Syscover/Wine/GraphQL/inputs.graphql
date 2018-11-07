@@ -1,3 +1,13 @@
+input WineAppellationInput {
+    data_lang: [String]
+    description: String
+    id: Int
+    ix: Int
+    lang_id: String!
+    name: String!
+    slug: String!
+}
+
 input WineWineInput {
     attachments: [AdminAttachmentInput]
     data: Object

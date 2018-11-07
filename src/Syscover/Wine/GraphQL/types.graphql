@@ -1,3 +1,13 @@
+type WineAppellation {
+    data_lang: [String]!
+    description: String
+    id: Int!
+    ix: Int!
+    lang_id: String!
+    name: String!
+    slug: String!
+}
+
 type WineWine {
     attachments: [AdminAttachment]
     data: Object
