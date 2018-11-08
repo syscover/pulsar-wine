@@ -100,3 +100,18 @@ type WineWine {
     type_id: Int
     weight: Float
 }
+
+type WineWinery {
+    attachments: [AdminAttachmentInput]
+    country_id: String!
+    data: Object
+    data_lang: [String]
+    description: String
+    excerpt: String
+    header: String
+    id: Int
+    ix: Int!
+    lang_id: String
+    name: String!
+    slug: String!
+}

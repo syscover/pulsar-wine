@@ -37,3 +37,8 @@ wineDeleteType(id:Int! lang_id:String!): WineType @field(resolver: "Syscover\\Wi
 wineCreateWine(payload:WineWineInput!): WineWine @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\WineGraphQLService@create")
 wineUpdateWine(payload:WineWineInput!): WineWine @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\WineGraphQLService@update")
 wineDeleteWine(id:Int! lang_id:String!): WineWine @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\WineGraphQLService@delete")
+
+# Type
+wineCreateWinery(payload:WineWineryInput!): WineWinery @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\WineryGraphQLService@create")
+wineUpdateWinery(payload:WineWineryInput!): WineWinery @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\WineryGraphQLService@update")
+wineDeleteWinery(id:Int! lang_id:String!): WineWinery @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\WineryGraphQLService@delete")

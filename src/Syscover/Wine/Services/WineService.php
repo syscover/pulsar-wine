@@ -46,7 +46,7 @@ class WineService
     public static function update($object)
     {
         self::checkUpdate($object);
-        Wine::where('id', $object['id'])->update(self::builder($object, ['year', 'is_product', 'data_lang']));
+        Wine::where('id', $object['id'])->update(self::builder($object, ['year', 'is_product']));
 
         // update wine lang
         WineLang::where('wine_wine_lang.id', $object['id'])

@@ -5,10 +5,7 @@ use Illuminate\Support\Facades\Validator;
 use Syscover\Admin\Models\Attachment;
 use Syscover\Admin\Traits\Translatable;
 use Syscover\Core\Models\CoreModel;
-use Syscover\Market\Models\Category;
-use Syscover\Market\Models\Product;
-use Syscover\Market\Models\Section;
-use Syscover\Market\Models\Stock;
+use Syscover\Market\Traits\Marketable;
 
 /**
  * Class Wine
@@ -18,6 +15,7 @@ use Syscover\Market\Models\Stock;
 class Wine extends CoreModel
 {
     use Translatable;
+    use Marketable;
 
 	protected $table        = 'wine_wine';
     protected $fillable     = ['year', 'is_product', 'product_id', 'data_lang', 'data'];
@@ -69,44 +67,6 @@ class Wine extends CoreModel
     public function scopeCalculateFoundRows($query)
     {
         return $query->select(DB::raw('SQL_CALC_FOUND_ROWS wine_wine.id'));
-    }
-
-    public function products()
-    {
-        return $this->morphMany(Product::class, 'object', 'object_type', 'object_id', 'id');
-    }
-
-    public function categories()
-    {
-        return $this->belongsToMany(
-            Category::class,
-            'market_products_categories',
-            'product_id',
-            'category_id',
-            'product_id',
-            'id'
-        );
-    }
-
-    public function sections()
-    {
-        return $this->belongsToMany(
-            Section::class,
-            'market_products_sections',
-            'product_id',
-            'section_id',
-            'product_id',
-            'id'
-        );
-    }
-
-    public function stocks()
-    {
-        return $this->hasMany(
-            Stock::class,
-            'product_id',
-            'product_id'
-        );
     }
 
     /**

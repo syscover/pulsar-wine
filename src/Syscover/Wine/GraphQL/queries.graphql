@@ -61,3 +61,11 @@ wineWines(sql:[CoreSQLInput]): [WineWine!]! @field(resolver: "Syscover\\Wine\\Gr
 wineWine(sql:[CoreSQLInput]): WineWine @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\WineGraphQLService@find")
 """ Query to get Wines paginated """
 wineWinesPagination(sql:[CoreSQLInput] filters:[CoreSQLInput]): CorePagination! @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\WineGraphQLService@paginate")
+
+# Winery
+""" Query to get family list """
+wineWineries(sql:[CoreSQLInput]): [WineWinery!]! @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\WineryGraphQLService@get")
+""" Query to get Winery """
+wineWinery(sql:[CoreSQLInput]): WineWinery @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\WineryGraphQLService@find")
+""" Query to get Wineries paginated """
+wineWineriesPagination(sql:[CoreSQLInput] filters:[CoreSQLInput]): CorePagination! @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\WineryGraphQLService@paginate")
