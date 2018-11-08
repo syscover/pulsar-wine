@@ -6,6 +6,30 @@ wineAppellation(sql:[CoreSQLInput]): WineAppellation @field(resolver: "Syscover\
 """ Query to get Appellations paginated """
 wineAppellationsPagination(sql:[CoreSQLInput] filters:[CoreSQLInput]): CorePagination! @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\AppellationGraphQLService@paginate")
 
+# Family
+""" Query to get family list """
+wineFamilies(sql:[CoreSQLInput]): [WineFamily!]! @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\FamilyGraphQLService@get")
+""" Query to get Family """
+wineFamily(sql:[CoreSQLInput]): WineFamily @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\FamilyGraphQLService@find")
+""" Query to get Families paginated """
+wineFamiliesPagination(sql:[CoreSQLInput] filters:[CoreSQLInput]): CorePagination! @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\FamilyGraphQLService@paginate")
+
+# Grape
+""" Query to get appellation list """
+wineGrapes(sql:[CoreSQLInput]): [WineGrape!]! @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\GrapeGraphQLService@get")
+""" Query to get Grape """
+wineGrape(sql:[CoreSQLInput]): WineGrape @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\GrapeGraphQLService@find")
+""" Query to get Grapes paginated """
+wineGrapesPagination(sql:[CoreSQLInput] filters:[CoreSQLInput]): CorePagination! @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\GrapeGraphQLService@paginate")
+
+# Type
+""" Query to get type list """
+wineTypes(sql:[CoreSQLInput]): [WineType!]! @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\TypeGraphQLService@get")
+""" Query to get Type """
+wineType(sql:[CoreSQLInput]): WineType @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\TypeGraphQLService@find")
+""" Query to get Types paginated """
+wineTypesPagination(sql:[CoreSQLInput] filters:[CoreSQLInput]): CorePagination! @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\TypeGraphQLService@paginate")
+
 # Wine
 """ Query to get wine list """
 wineWines(sql:[CoreSQLInput]): [WineWine!]! @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\WineGraphQLService@get")

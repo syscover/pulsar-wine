@@ -3,6 +3,21 @@ wineCreateAppellation(payload:WineAppellationInput!): WineAppellation @field(res
 wineUpdateAppellation(payload:WineAppellationInput!): WineAppellation @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\AppellationGraphQLService@update")
 wineDeleteAppellation(id:Int! lang_id:String!): WineAppellation @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\AppellationGraphQLService@delete")
 
+# Family
+wineCreateFamily(payload:WineFamilyInput!): WineFamily @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\FamilyGraphQLService@create")
+wineUpdateFamily(payload:WineFamilyInput!): WineFamily @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\FamilyGraphQLService@update")
+wineDeleteFamily(id:Int! lang_id:String!): WineFamily @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\FamilyGraphQLService@delete")
+
+# Grape
+wineCreateGrape(payload:WineGrapeInput!): WineGrape @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\GrapeGraphQLService@create")
+wineUpdateGrape(payload:WineGrapeInput!): WineGrape @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\GrapeGraphQLService@update")
+wineDeleteGrape(id:Int! lang_id:String!): WineGrape @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\GrapeGraphQLService@delete")
+
+# Type
+wineCreateType(payload:WineTypeInput!): WineType @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\TypeGraphQLService@create")
+wineUpdateType(payload:WineTypeInput!): WineType @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\TypeGraphQLService@update")
+wineDeleteType(id:Int! lang_id:String!): WineType @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\TypeGraphQLService@delete")
+
 # Wine
 wineCreateWine(payload:WineWineInput!): WineWine @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\WineGraphQLService@create")
 wineUpdateWine(payload:WineWineInput!): WineWine @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\WineGraphQLService@update")

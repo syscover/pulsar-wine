@@ -8,6 +8,34 @@ type WineAppellation {
     slug: String!
 }
 
+type WineFamily {
+    data_lang: [String]!
+    id: Int!
+    ix: Int!
+    lang_id: String!
+    name: String!
+    slug: String!
+}
+
+type WineGrape {
+    data_lang: [String]!
+    description: String
+    id: Int!
+    ix: Int!
+    lang_id: String!
+    name: String!
+    slug: String!
+}
+
+type WineType {
+    data_lang: [String]!
+    id: Int!
+    ix: Int!
+    lang_id: String!
+    name: String!
+    slug: String!
+}
+
 type WineWine {
     attachments: [AdminAttachment]
     data: Object
