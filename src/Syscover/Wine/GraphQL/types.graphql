@@ -8,6 +8,15 @@ type WineAppellation {
     slug: String!
 }
 
+type WineAward {
+    data_lang: [String]!
+    id: Int!
+    ix: Int!
+    lang_id: String!
+    name: String!
+    slug: String!
+}
+
 type WineFamily {
     data_lang: [String]!
     id: Int!
@@ -20,6 +29,24 @@ type WineFamily {
 type WineGrape {
     data_lang: [String]!
     description: String
+    id: Int!
+    ix: Int!
+    lang_id: String!
+    name: String!
+    slug: String!
+}
+
+type WinePairing {
+    data_lang: [String]!
+    id: Int!
+    ix: Int!
+    lang_id: String!
+    name: String!
+    slug: String!
+}
+
+type WinePresentation {
+    data_lang: [String]!
     id: Int!
     ix: Int!
     lang_id: String!

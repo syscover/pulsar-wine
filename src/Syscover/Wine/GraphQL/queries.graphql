@@ -6,6 +6,14 @@ wineAppellation(sql:[CoreSQLInput]): WineAppellation @field(resolver: "Syscover\
 """ Query to get Appellations paginated """
 wineAppellationsPagination(sql:[CoreSQLInput] filters:[CoreSQLInput]): CorePagination! @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\AppellationGraphQLService@paginate")
 
+# Award
+""" Query to get appellation list """
+wineAwards(sql:[CoreSQLInput]): [WineAward!]! @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\AwardGraphQLService@get")
+""" Query to get Award """
+wineAward(sql:[CoreSQLInput]): WineAward @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\AwardGraphQLService@find")
+""" Query to get Awards paginated """
+wineAwardsPagination(sql:[CoreSQLInput] filters:[CoreSQLInput]): CorePagination! @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\AwardGraphQLService@paginate")
+
 # Family
 """ Query to get family list """
 wineFamilies(sql:[CoreSQLInput]): [WineFamily!]! @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\FamilyGraphQLService@get")
@@ -21,6 +29,22 @@ wineGrapes(sql:[CoreSQLInput]): [WineGrape!]! @field(resolver: "Syscover\\Wine\\
 wineGrape(sql:[CoreSQLInput]): WineGrape @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\GrapeGraphQLService@find")
 """ Query to get Grapes paginated """
 wineGrapesPagination(sql:[CoreSQLInput] filters:[CoreSQLInput]): CorePagination! @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\GrapeGraphQLService@paginate")
+
+# Pairing
+""" Query to get appellation list """
+winePairings(sql:[CoreSQLInput]): [WinePairing!]! @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\PairingGraphQLService@get")
+""" Query to get Pairing """
+winePairing(sql:[CoreSQLInput]): WinePairing @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\PairingGraphQLService@find")
+""" Query to get Pairings paginated """
+winePairingsPagination(sql:[CoreSQLInput] filters:[CoreSQLInput]): CorePagination! @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\PairingGraphQLService@paginate")
+
+# Presentation
+""" Query to get appellation list """
+winePresentations(sql:[CoreSQLInput]): [WinePresentation!]! @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\PresentationGraphQLService@get")
+""" Query to get Presentation """
+winePresentation(sql:[CoreSQLInput]): WinePresentation @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\PresentationGraphQLService@find")
+""" Query to get Presentations paginated """
+winePresentationsPagination(sql:[CoreSQLInput] filters:[CoreSQLInput]): CorePagination! @field(resolver: "Syscover\\Wine\\GraphQL\\Services\\PresentationGraphQLService@paginate")
 
 # Type
 """ Query to get type list """

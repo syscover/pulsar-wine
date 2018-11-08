@@ -8,6 +8,15 @@ input WineAppellationInput {
     slug: String!
 }
 
+input WineAwardInput {
+    data_lang: [String]
+    id: Int
+    ix: Int
+    lang_id: String!
+    name: String!
+    slug: String!
+}
+
 input WineFamilyInput {
     data_lang: [String]
     id: Int
@@ -20,6 +29,24 @@ input WineFamilyInput {
 input WineGrapeInput {
     data_lang: [String]
     description: String
+    id: Int
+    ix: Int
+    lang_id: String!
+    name: String!
+    slug: String!
+}
+
+input WinePairingInput {
+    data_lang: [String]
+    id: Int
+    ix: Int
+    lang_id: String!
+    name: String!
+    slug: String!
+}
+
+input WinePresentationInput {
+    data_lang: [String]
     id: Int
     ix: Int
     lang_id: String!
