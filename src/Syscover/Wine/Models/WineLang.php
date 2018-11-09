@@ -15,7 +15,7 @@ class WineLang extends CoreModel
 
 	protected $table        = 'wine_wine_lang';
     protected $primaryKey   = 'ix';
-    protected $fillable     = ['id', 'lang_id', 'name', 'slug', 'year', 'is_product', 'tasting_note', 'data'];
+    protected $fillable     = ['id', 'lang_id', 'name', 'slug', 'production', 'tasting', 'tasting_look', 'tasting_nose', 'tasting_mouth', 'tasting_temperature', 'tasting_consumption', 'vineyard', 'vineyard_name', 'vineyard_area', 'vineyard_description', 'vineyard_age', 'vineyard_soil', 'vineyard_weather', 'vineyard_performance', 'vineyard_vintage', 'vineyard_vinification', 'vineyard_aging', 'vineyard_bottling', 'data'];
     public $incrementing    = false;
     protected $casts        = [
         'data' => 'array'

@@ -18,7 +18,7 @@ class Wine extends CoreModel
     use Marketable;
 
 	protected $table        = 'wine_wine';
-    protected $fillable     = ['year', 'is_product', 'product_id', 'data_lang', 'data'];
+    protected $fillable     = ['family_id', 'type_id', 'vintage', 'winery_id', 'appellation_id', 'presentation_id', 'abv', 'country_id', 'territorial_area_1_id', 'territorial_area_2_id', 'territorial_area_3_id', 'score_average', 'parker', 'suckling', 'penin', 'decanter', 'wine_spectator', 'is_product', 'product_id', 'data_lang', 'data'];
     protected $casts        = [
         'is_product'                => 'boolean',
         'data_lang'                 => 'array',

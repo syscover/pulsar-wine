@@ -24,9 +24,12 @@ class WineCreateTableWine extends Migration
 
                 $table->smallInteger('vintage')->unsigned();                // year of wine
 
-                // winery
+                // relations columns
                 $table->integer('winery_id')->unsigned();
-                $table->integer('appellation_id')->unsigned();  // DO
+                $table->integer('appellation_id')->unsigned();              // DO
+
+                // size of bottle
+                $table->integer('presentation_id')->unsigned()->nullable();
 
                 // alcohol by volume
                 $table->decimal('abv', 4, 2)->nullable();
@@ -38,7 +41,7 @@ class WineCreateTableWine extends Migration
                 $table->string('territorial_area_3_id', 10)->nullable();
 
                 // scores
-                $table->decimal('average', 5, 2)->nullable();
+                $table->decimal('score_average', 5, 2)->nullable();
                 $table->tinyInteger('parker')->unsigned()->nullable();
                 $table->tinyInteger('suckling')->unsigned()->nullable();
                 $table->tinyInteger('penin')->unsigned()->nullable();
@@ -78,22 +81,27 @@ class WineCreateTableWine extends Migration
                     ->on('wine_appellation')
                     ->onDelete('restrict')
                     ->onUpdate('cascade');
-                $table->foreign('country_id', 'fk06_wine_wine')
+                $table->foreign('presentation_id', 'fk06_wine_wine')
+                    ->references('id')
+                    ->on('wine_presentation')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
+                $table->foreign('country_id', 'fk07_wine_wine')
                     ->references('id')
                     ->on('admin_country')
                     ->onDelete('restrict')
                     ->onUpdate('cascade');
-                $table->foreign('territorial_area_1_id', 'fk07_wine_wine')
+                $table->foreign('territorial_area_1_id', 'fk08_wine_wine')
                     ->references('id')
                     ->on('admin_territorial_area_1')
                     ->onDelete('restrict')
                     ->onUpdate('cascade');
-                $table->foreign('territorial_area_2_id', 'fk08_wine_wine')
+                $table->foreign('territorial_area_2_id', 'fk09_wine_wine')
                     ->references('id')
                     ->on('admin_territorial_area_2')
                     ->onDelete('restrict')
                     ->onUpdate('cascade');
-                $table->foreign('territorial_area_3_id', 'fk09_wine_wine')
+                $table->foreign('territorial_area_3_id', 'fk10_wine_wine')
                     ->references('id')
                     ->on('admin_territorial_area_3')
                     ->onDelete('restrict')
