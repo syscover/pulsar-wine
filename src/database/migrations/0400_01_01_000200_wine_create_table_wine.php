@@ -19,14 +19,14 @@ class WineCreateTableWine extends Migration
 
                 $table->increments('id');
 
-                $table->integer('type_id')->unsigned();                     // red, white, etc.
-                $table->integer('family_id')->unsigned()->nullable();       // ecological, kosher, etc.
+                $table->integer('type_id')->unsigned();                             // Red, white, etc.
+                $table->integer('family_id')->unsigned()->nullable();               // Ecological, kosher, etc.
 
-                $table->smallInteger('vintage')->unsigned()->nullable();    // year of wine
+                $table->smallInteger('vintage')->unsigned()->nullable();            // Year of wine
 
                 // relations columns
-                $table->integer('winery_id')->unsigned();                   // Bodega
-                $table->integer('appellation_id')->unsigned();              // DO
+                $table->integer('winery_id')->unsigned();                           // Bodega
+                $table->integer('appellation_id')->unsigned();                      // DO
 
                 // size of bottle
                 $table->integer('presentation_id')->unsigned()->nullable();
