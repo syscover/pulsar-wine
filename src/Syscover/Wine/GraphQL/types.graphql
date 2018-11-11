@@ -64,16 +64,51 @@ type WineType {
 }
 
 type WineWine {
+    abv: Float
+    appellation_id: Int!
     attachments: [AdminAttachment]
+    country_id: String!
     data: Object
     data_lang: [String]
+    decanter: Int
+    family_id: Int
     id: Int!
     is_product: Boolean!
     ix: Int!
+    lang_id: String
     name: String!
+    parker: Int
+    penin: Int
+    presentation_id: Int
     product_id: Int
-    tasting_note: String
-    year: Int
+    production: String
+    score_average: Float
+    suckling: Int
+    tasting: String
+    tasting_look: String
+    tasting_nose: String
+    tasting_mouth: String
+    tasting_temperature: String
+    tasting_consumption: String
+    territorial_area_1_id: String
+    territorial_area_2_id: String
+    territorial_area_3_id: String
+    type_id: Int!
+    vineyard: String
+    vineyard_name: String
+    vineyard_area: String
+    vineyard_description: String
+    vineyard_age: String
+    vineyard_soil: String
+    vineyard_weather: String
+    vineyard_performance: String
+    vineyard_vintage: String
+    vineyard_vinification: String
+    vineyard_aging: String
+    vineyard_bottling: String
+    vintage: Int
+    wine_spectator: Int
+    winery_id: Int!
 
     # Marketable columns
     # Marketable fields cann't to be required if is marketable is optional

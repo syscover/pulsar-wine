@@ -67,15 +67,19 @@ input WineWineInput {
     abv: Float
     appellation_id: Int!
     attachments: [AdminAttachmentInput]
+    awards_id: [Int]
     country_id: String!
     data: Object
     data_lang: [String]
     decanter: Int
     family_id: Int
+    grapes_id: [Int]
     id: Int
     is_product: Boolean!
+    ix: Int
     lang_id: String
     name: String!
+    pairings_id: [Int]
     parker: Int
     penin: Int
     presentation_id: Int
