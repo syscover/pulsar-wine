@@ -25,7 +25,7 @@ class WineCreateTableWine extends Migration
                 $table->smallInteger('vintage')->unsigned()->nullable();    // year of wine
 
                 // relations columns
-                $table->integer('winery_id')->unsigned();
+                $table->integer('winery_id')->unsigned();                   // Bodega
                 $table->integer('appellation_id')->unsigned();              // DO
 
                 // size of bottle
@@ -35,7 +35,7 @@ class WineCreateTableWine extends Migration
                 $table->decimal('abv', 4, 2)->nullable();
 
                 // geolocation data
-                $table->string('country_id', 2)->nullable();
+                $table->string('country_id', 2);
                 $table->string('territorial_area_1_id', 6)->nullable();
                 $table->string('territorial_area_2_id', 10)->nullable();
                 $table->string('territorial_area_3_id', 10)->nullable();
