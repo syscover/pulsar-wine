@@ -116,6 +116,7 @@ input WineWineInput {
     # Marketable columns
     active: Boolean
     categories_id: [String]
+    class_id: Int
     cost: Float
     cost_per_sale: Float
     enable_from: String
@@ -135,7 +136,6 @@ input WineWineInput {
     sort: Int
     starts_at: String
     subtotal: Float
-    type_id: Int
     weight: Float
 }
 

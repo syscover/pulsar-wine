@@ -114,6 +114,7 @@ type WineWine {
     # Marketable fields cann't to be required if is marketable is optional
     active: Boolean
     categories: [MarketCategory]
+    class_id: Int
     cost: Float
     cost_per_sale: Float
     enable_from: String
@@ -132,7 +133,6 @@ type WineWine {
     sort: Int
     starts_at: String
     subtotal: Float
-    type_id: Int
     weight: Float
 }
 
