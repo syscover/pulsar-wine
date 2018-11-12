@@ -69,6 +69,42 @@ class Wine extends CoreModel
         return $query->select(DB::raw('SQL_CALC_FOUND_ROWS wine_wine.id'));
     }
 
+    public function grapes()
+    {
+        return $this->belongsToMany(
+            Grape::class,
+            'wine_wines_grapes',
+            'wine_id',
+            'grape_id',
+            'id',
+            'id'
+        );
+    }
+
+    public function awards()
+    {
+        return $this->belongsToMany(
+            Award::class,
+            'wine_wines_awards',
+            'wine_id',
+            'award_id',
+            'id',
+            'id'
+        );
+    }
+
+    public function pairings()
+    {
+        return $this->belongsToMany(
+            Pairing::class,
+            'wine_wines_pairings',
+            'wine_id',
+            'pairing_id',
+            'id',
+            'id'
+        );
+    }
+
     /**
      * Is not possible add 'attachments' to $with parameter, it need to be instantiated to get lang parameter
      * It's possible pass lang parameter with this method

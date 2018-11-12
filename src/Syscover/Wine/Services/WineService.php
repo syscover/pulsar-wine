@@ -30,6 +30,10 @@ class WineService
             ->where('wine_wine_lang.lang_id', $wine->lang_id)
             ->first();
 
+        $wine->grapes()->sync($object['grapes_id']);
+        $wine->awards()->sync($object['awards_id']);
+        $wine->pairings()->sync($object['pairings_id']);
+
         // set attachments
         if(isset($object['attachments']) && is_array($object['attachments']))
         {
@@ -58,6 +62,10 @@ class WineService
             ->where('wine_wine.id', $object['id'])
             ->where('wine_wine_lang.lang_id', $object['lang_id'])
             ->first();
+
+        $wine->grapes()->sync($object['grapes_id']);
+        $wine->awards()->sync($object['awards_id']);
+        $wine->pairings()->sync($object['pairings_id']);
 
         // set attachments
         if(isset($object['attachments']) && is_array($object['attachments']))

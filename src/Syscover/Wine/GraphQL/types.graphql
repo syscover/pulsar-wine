@@ -67,16 +67,19 @@ type WineWine {
     abv: Float
     appellation_id: Int!
     attachments: [AdminAttachment]
+    awards: [WineAward]
     country_id: String!
     data: Object
     data_lang: [String]
     decanter: Int
     family_id: Int
+    grapes: [WineGrape]
     id: Int!
     is_product: Boolean!
     ix: Int!
     lang_id: String
     name: String!
+    pairings: [WinePairing]
     parker: Int
     penin: Int
     presentation_id: Int
