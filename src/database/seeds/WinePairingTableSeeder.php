@@ -17,7 +17,7 @@ class WinePairingTableSeeder extends Seeder {
             ['id' => 7,         'lang_id' => 'es',      'name' => 'Carnes asadas',                          'data_lang' => ['es']],
             ['id' => 8,         'lang_id' => 'es',      'name' => 'Carnes en salsa',                        'data_lang' => ['es']],
             ['id' => 9,         'lang_id' => 'es',      'name' => 'Cerdo',                                  'data_lang' => ['es']],
-            ['id' => 10,         'lang_id' => 'es',      'name' => 'Cordero',                               'data_lang' => ['es']],
+            ['id' => 10,        'lang_id' => 'es',      'name' => 'Cordero',                                'data_lang' => ['es']],
             ['id' => 11,        'lang_id' => 'es',      'name' => 'Aves',                                   'data_lang' => ['es']],
             ['id' => 12,        'lang_id' => 'es',      'name' => 'Pavo',                                   'data_lang' => ['es']],
             ['id' => 13,        'lang_id' => 'es',      'name' => 'Pollo',                                  'data_lang' => ['es']],
@@ -30,9 +30,7 @@ class WinePairingTableSeeder extends Seeder {
             ['id' => 20,        'lang_id' => 'es',      'name' => 'Pescados semigrasos',                    'data_lang' => ['es']],
             ['id' => 21,        'lang_id' => 'es',      'name' => 'Pescados a la parrilla',                 'data_lang' => ['es']],
             ['id' => 22,        'lang_id' => 'es',      'name' => 'Pescados asados',                        'data_lang' => ['es']],
-            ['id' => 22,        'lang_id' => 'es',      'name' => 'Pescados en salsa',                      'data_lang' => ['es']],
-
-
+            ['id' => 23,        'lang_id' => 'es',      'name' => 'Pescados en salsa',                      'data_lang' => ['es']],
         ]);
     }
 }
