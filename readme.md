@@ -36,15 +36,15 @@ php artisan db:seed --class="WineTableSeeder"
 php artisan migrate --path=vendor/syscover/pulsar-wine/src/database/migrations/updates
 ```
 
-**Options**
-You can register ResetLinkEmailSent event in app/Providers/EventServiceProvider.php to custom the notification. 
-Don't forget to create App\Listeners\SendResetLinkEmail listener.
+**5 - Add graphQL routes to routes/graphql/schema.graphql file**
 ```
-protected $listen = [
-    ...
-    'Syscover\Crm\Events\ResetLinkEmailSent' => [
-        'App\Listeners\SendResetLinkEmail'
-    ],
-    ...
-];
+# Wine types
+#import ./../../vendor/syscover/pulsar-wine/src/Syscover/Wine/GraphQL/inputs.graphql
+#import ./../../vendor/syscover/pulsar-wine/src/Syscover/Wine/GraphQL/types.graphql
+
+# Wine queries
+#import ./../../vendor/syscover/pulsar-wine/src/Syscover/Wine/GraphQL/queries.graphql
+
+# Wine mutations
+#import ./../../vendor/syscover/pulsar-wine/src/Syscover/Wine/GraphQL/mutations.graphql
 ```
