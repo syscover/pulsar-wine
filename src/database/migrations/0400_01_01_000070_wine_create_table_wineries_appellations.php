@@ -14,7 +14,7 @@ class WineCreateTableWineriesAppellations extends Migration {
 	{
 		if (! Schema::hasTable('wine_wineries_appellations'))
 		{
-			Schema::create('wine_wines_grapes', function (Blueprint $table) {
+			Schema::create('wine_wineries_appellations', function (Blueprint $table) {
 				$table->engine = 'InnoDB';
 				
 				$table->integer('winery_id')->unsigned();
