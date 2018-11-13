@@ -65,17 +65,17 @@ input WineTypeInput {
 
 input WineWineInput {
     abv: Float
-    appellation_id: Int!
+    appellation_id: Int
     attachments: [AdminAttachmentInput]
     awards_id: [Int]
-    country_id: String!
+    country_id: String
     data: Object
     data_lang: [String]
     decanter: Int
     family_id: Int
     grapes_id: [Int]
     id: Int
-    is_product: Boolean!
+    is_product: Boolean
     ix: Int
     lang_id: String
     name: String!
@@ -96,7 +96,7 @@ input WineWineInput {
     territorial_area_1_id: String
     territorial_area_2_id: String
     territorial_area_3_id: String
-    type_id: Int!
+    type_id: Int
     vineyard: String
     vineyard_name: String
     vineyard_area: String
@@ -111,7 +111,7 @@ input WineWineInput {
     vineyard_bottling: String
     vintage: Int
     wine_spectator: Int
-    winery_id: Int!
+    winery_id: Int
 
     # Marketable columns
     active: Boolean
