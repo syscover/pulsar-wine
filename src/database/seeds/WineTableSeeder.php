@@ -11,6 +11,7 @@ class WineTableSeeder extends Seeder
 
         $this->call(WinePackageTableSeeder::class);
         $this->call(WineResourceTableSeeder::class);
+        $this->call(WineAppellationTableSeeder::class);
 
         Model::reguard();
     }
