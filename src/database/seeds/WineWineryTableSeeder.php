@@ -9,7 +9,7 @@ class WineWineryTableSeeder extends Seeder {
     public function run()
     {
         Winery::insert([
-            ['id' => 1,         'name' => 'Bodegas Protos',                         'country_id' => 'ES',     'data_lang' => '["es"]']
+            ['id' => 1,         'name' => 'Bodegas Protos',     'slug' => 'bodegas-protos',     'country_id' => 'ES',     'data_lang' => '["es"]']
         ]);
 
         WineryLang::insert([

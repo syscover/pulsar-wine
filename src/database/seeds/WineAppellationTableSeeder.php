@@ -8,14 +8,14 @@ class WineAppellationTableSeeder extends Seeder {
     public function run()
     {
         Appellation::insert([
-            ['id' => 1,         'lang_id' => 'es',      'name' => 'Rioja',                                  'slug' => 'rioja',          'data_lang' => '["es"]'],
-            ['id' => 2,         'lang_id' => 'es',      'name' => 'Ribera del Duero',                       'slug' => '',               'data_lang' => '["es"]'],
-            ['id' => 3,         'lang_id' => 'es',      'name' => 'Priorat',                                'slug' => '',               'data_lang' => '["es"]'],
-            ['id' => 4,         'lang_id' => 'es',      'name' => 'Condado de Huelva',                      'slug' => '',               'data_lang' => '["es"]'],
-            ['id' => 5,         'lang_id' => 'es',      'name' => 'Jerez-Xérès-Sherry',                     'slug' => '',               'data_lang' => '["es"]'],
-            ['id' => 6,         'lang_id' => 'es',      'name' => 'Málaga',                                 'slug' => '',               'data_lang' => '["es"]'],
-            ['id' => 7,         'lang_id' => 'es',      'name' => 'Manzanilla Sanlúcar de Barrameda',       'slug' => '',               'data_lang' => '["es"]'],
-            ['id' => 8,         'lang_id' => 'es',      'name' => 'Montilla-Moriles',                       'slug' => '',               'data_lang' => '["es"]'],
+            ['id' => 1,         'lang_id' => 'es',      'name' => 'Rioja',                                  'slug' => 'rioja',                                  'data_lang' => '["es"]'],
+            ['id' => 2,         'lang_id' => 'es',      'name' => 'Ribera del Duero',                       'slug' => 'ribera-del-duero',                       'data_lang' => '["es"]'],
+            ['id' => 3,         'lang_id' => 'es',      'name' => 'Priorat',                                'slug' => 'priorat',                                'data_lang' => '["es"]'],
+            ['id' => 4,         'lang_id' => 'es',      'name' => 'Condado de Huelva',                      'slug' => 'condado-de-huelva',                      'data_lang' => '["es"]'],
+            ['id' => 5,         'lang_id' => 'es',      'name' => 'Jerez-Xérès-Sherry',                     'slug' => 'jerez-xeres-sherry',                     'data_lang' => '["es"]'],
+            ['id' => 6,         'lang_id' => 'es',      'name' => 'Málaga',                                 'slug' => 'malaga',                                 'data_lang' => '["es"]'],
+            ['id' => 7,         'lang_id' => 'es',      'name' => 'Manzanilla Sanlúcar de Barrameda',       'slug' => 'manzanilla-sanlucar-de-barrameda',       'data_lang' => '["es"]'],
+            ['id' => 8,         'lang_id' => 'es',      'name' => 'Montilla-Moriles',                       'slug' => 'montilla-moriles',                       'data_lang' => '["es"]'],
             ['id' => 9,         'lang_id' => 'es',      'name' => 'Sierras de Málaga',                      'slug' => '',               'data_lang' => '["es"]'],
             ['id' => 10,        'lang_id' => 'es',      'name' => 'Calatayud',                              'slug' => '',               'data_lang' => '["es"]'],
             ['id' => 11,        'lang_id' => 'es',      'name' => 'Campo de Borja',                         'slug' => '',               'data_lang' => '["es"]'],
