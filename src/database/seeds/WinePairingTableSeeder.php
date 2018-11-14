@@ -42,10 +42,18 @@ class WinePairingTableSeeder extends Seeder {
             ['id' => 29,        'lang_id' => 'es',      'name' => 'Arroces con carne',                      'data_lang' => '["es"]'],
             ['id' => 30,        'lang_id' => 'es',      'name' => 'Arroces con pescado',                    'data_lang' => '["es"]'],
             ['id' => 31,        'lang_id' => 'es',      'name' => 'Risottos',                               'data_lang' => '["es"]'],
-
+            // comidas
             ['id' => 32,        'lang_id' => 'es',      'name' => 'Aperitivos',                             'data_lang' => '["es"]'],
             ['id' => 33,        'lang_id' => 'es',      'name' => 'Ahumados',                               'data_lang' => '["es"]'],
             ['id' => 34,        'lang_id' => 'es',      'name' => 'Asados',                                 'data_lang' => '["es"]'],
+            ['id' => 35,        'lang_id' => 'es',      'name' => 'Ceviches',                               'data_lang' => '["es"]'],
+            ['id' => 36,        'lang_id' => 'es',      'name' => 'Cocidos',                                'data_lang' => '["es"]'],
+            ['id' => 37,        'lang_id' => 'es',      'name' => 'Embutidos',                              'data_lang' => '["es"]'],
+            ['id' => 38,        'lang_id' => 'es',      'name' => 'Escabeches',                             'data_lang' => '["es"]'],
+            ['id' => 39,        'lang_id' => 'es',      'name' => 'Fabada',                                 'data_lang' => '["es"]'],
+            ['id' => 39,        'lang_id' => 'es',      'name' => 'Frituras',                               'data_lang' => '["es"]'],
+            ['id' => 40,        'lang_id' => 'es',      'name' => 'Guisos',                                 'data_lang' => '["es"]'],
+            ['id' => 41,        'lang_id' => 'es',      'name' => 'Guisos con setas',                       'data_lang' => '["es"]'],
         ]);
     }
 }
