@@ -19,6 +19,7 @@ class WineCreateTableWinesGrapes extends Migration {
 				
 				$table->integer('wine_id')->unsigned();
 				$table->integer('grape_id')->unsigned();
+                $table->decimal('percentage', 5, 2)->nullable();
 
 				$table->primary(['wine_id', 'grape_id'], 'pk01_wine_wines_grapes');
 			});
