@@ -30,7 +30,7 @@ class WineService
             ->where('wine_wine_lang.lang_id', $wine->lang_id)
             ->first();
 
-        $wine->grapes()->sync($object['grapes_id']);
+        $wine->grapes()->sync(json_decode(json_encode($object['grapes_id']), true));
         $wine->awards()->sync($object['awards_id']);
         $wine->pairings()->sync($object['pairings_id']);
 
@@ -63,7 +63,7 @@ class WineService
             ->where('wine_wine_lang.lang_id', $object['lang_id'])
             ->first();
 
-        $wine->grapes()->sync($object['grapes_id']);
+        $wine->grapes()->sync(json_decode(json_encode($object['grapes_id']), true));
         $wine->awards()->sync($object['awards_id']);
         $wine->pairings()->sync($object['pairings_id']);
 

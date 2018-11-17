@@ -73,7 +73,8 @@ input WineWineInput {
     data_lang: [String]
     decanter: Int
     family_id: Int
-    grapes_id: [Int]
+    grapes_id: Object
+    grapes_rel: [Int]
     id: Int
     is_product: Boolean
     ix: Int

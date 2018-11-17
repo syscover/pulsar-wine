@@ -28,7 +28,8 @@ class Wine extends CoreModel
         'categories',
         'lang',
         'sections',
-        'stocks'
+        'stocks',
+        'grapes'
     ];
 
     private static $rules   = [
@@ -72,13 +73,15 @@ class Wine extends CoreModel
     public function grapes()
     {
         return $this->belongsToMany(
-            Grape::class,
-            'wine_wines_grapes',
-            'wine_id',
-            'grape_id',
-            'id',
-            'id'
-        );
+                Grape::class,
+                'wine_wines_grapes',
+                'wine_id',
+                'grape_id',
+                'id',
+                'id'
+            )
+            ->as('composition')
+            ->withPivot('percentage');
     }
 
     public function awards()
