@@ -53,6 +53,14 @@ class Wine extends CoreModel
                 $join->on('market_product.id', '=', 'market_product_lang.id')
                     ->on('market_product_lang.lang_id', '=', 'wine_wine_lang.lang_id');
             })
+            ->leftJoin('market_product_lang',  function ($join) {
+                $join->on('market_product.id', '=', 'market_product_lang.id')
+                    ->on('market_product_lang.lang_id', '=', 'wine_wine_lang.lang_id');
+            })
+            ->leftJoin('wine_appellation',  function ($join) {
+                $join->on('wine_wine.appellation_id', '=', 'wine_appellation.id')
+                    ->on('wine_wine_lang.lang_id', '=', 'wine_appellation.lang_id');
+            })
             ->addSelect(
                 'market_product.*',
                 'market_product_lang.*',
@@ -61,7 +69,8 @@ class Wine extends CoreModel
                 'wine_wine.*',
                 'wine_wine_lang.*',
                 'wine_wine_lang.data as wine_wine_lang_data',
-                'wine_wine.data as wine_wine_data'
+                'wine_wine.data as wine_wine_data',
+                'wine_appellation.name as appellation_name'
             );
     }
 
