@@ -31,7 +31,7 @@ class Wine extends CoreModel
         'stocks',
         'grapes'
     ];
-
+    protected $appends      = ['tax_amount', 'price'];
     private static $rules   = [
         'name' => 'required'
     ];
@@ -75,6 +75,22 @@ class Wine extends CoreModel
         return $query->select(DB::raw('SQL_CALC_FOUND_ROWS wine_wine.id'));
     }
 
+    /**
+     * Accessor to get fields from api request
+     */
+    public function getTaxAmountAttribute()
+    {
+        return $this->tax_amount;
+    }
+
+    public function getPriceAttribute()
+    {
+        return $this->price;
+    }
+
+    /**
+     * Relations
+     */
     public function grapes()
     {
         return $this->belongsToMany(
