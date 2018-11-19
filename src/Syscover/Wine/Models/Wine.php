@@ -62,11 +62,11 @@ class Wine extends CoreModel
                 'market_product_lang.*',
                 'market_product_lang.data as market_product_lang_data',
                 'market_product.data as market_product_data',
+                'wine_appellation.name as appellation_name',
                 'wine_wine.*',
                 'wine_wine_lang.*',
                 'wine_wine_lang.data as wine_wine_lang_data',
-                'wine_wine.data as wine_wine_data',
-                'wine_appellation.name as appellation_name'
+                'wine_wine.data as wine_wine_data'
             );
     }
 
