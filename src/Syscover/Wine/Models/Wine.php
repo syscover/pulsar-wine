@@ -29,7 +29,9 @@ class Wine extends CoreModel
         'lang',
         'sections',
         'stocks',
-        'grapes'
+        'grapes',
+        'appellations',
+        'presentations'
     ];
     protected $appends      = ['tax_amount', 'price'];
     private static $rules   = [
@@ -125,6 +127,24 @@ class Wine extends CoreModel
             'wine_id',
             'pairing_id',
             'id',
+            'id'
+        );
+    }
+
+    public function appellations()
+    {
+        return $this->hasMany(
+            Appellation::class,
+            'appellation_id',
+            'id'
+        );
+    }
+
+    public function presentations()
+    {
+        return $this->hasMany(
+            Presentation::class,
+            'presentation_id',
             'id'
         );
     }
