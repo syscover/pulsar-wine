@@ -141,6 +141,15 @@ class Wine extends CoreModel
         );
     }
 
+    public function types()
+    {
+        return $this->hasMany(
+            Type::class,
+            'id',
+            'type_id'
+        );
+    }
+
     public function appellations()
     {
         return $this->hasMany(
