@@ -30,6 +30,7 @@ class Wine extends CoreModel
         'sections',
         'stocks',
         'grapes',
+        'wineries',
         'appellations',
         'presentations'
     ];
@@ -131,12 +132,21 @@ class Wine extends CoreModel
         );
     }
 
+    public function wineries()
+    {
+        return $this->hasMany(
+            Winery::class,
+            'id',
+            'winery_id'
+        );
+    }
+
     public function appellations()
     {
         return $this->hasMany(
             Appellation::class,
-            'appellation_id',
-            'id'
+            'id',
+            'appellation_id'
         );
     }
 
@@ -144,8 +154,8 @@ class Wine extends CoreModel
     {
         return $this->hasMany(
             Presentation::class,
-            'presentation_id',
-            'id'
+            'id',
+            'presentation_id'
         );
     }
 
