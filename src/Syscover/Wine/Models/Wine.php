@@ -29,6 +29,7 @@ class Wine extends CoreModel
         'lang',
         'sections',
         'stocks',
+        'types',
         'grapes',
         'wineries',
         'appellations',
