@@ -139,7 +139,7 @@ class Wine extends CoreModel
             Winery::class,
             'id',
             'winery_id'
-        );
+        )->builder();
     }
 
     public function types()
