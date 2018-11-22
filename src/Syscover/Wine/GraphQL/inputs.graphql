@@ -71,7 +71,7 @@ input WineWineInput {
     country_id: String
     data: Object
     data_lang: [String]
-    decanter: Int
+    decanter: String
     family_id: Int
     grapes_id: Object
     grapes_rel: [Int]
@@ -81,13 +81,13 @@ input WineWineInput {
     lang_id: String
     name: String!
     pairings_id: [Int]
-    parker: Int
-    penin: Int
+    parker: String
+    penin: String
     presentation_id: Int
     product_id: Int
     production: String
     score_average: Float
-    suckling: Int
+    suckling: String
     tasting: String
     tasting_look: String
     tasting_nose: String
@@ -111,7 +111,7 @@ input WineWineInput {
     vineyard_aging: String
     vineyard_bottling: String
     vintage: Int
-    wine_spectator: Int
+    wine_spectator: String
     winery_id: Int
 
     # Marketable columns

@@ -42,11 +42,11 @@ class WineCreateTableWine extends Migration
 
                 // scores
                 $table->decimal('score_average', 5, 2)->nullable();
-                $table->tinyInteger('parker')->unsigned()->nullable();
-                $table->tinyInteger('suckling')->unsigned()->nullable();
-                $table->tinyInteger('penin')->unsigned()->nullable();
-                $table->tinyInteger('decanter')->unsigned()->nullable();
-                $table->tinyInteger('wine_spectator')->unsigned()->nullable();
+                $table->string('parker', 5)->nullable();
+                $table->string('suckling', 5)->nullable();
+                $table->string('penin', 5)->nullable();
+                $table->string('decanter', 5)->nullable();
+                $table->string('wine_spectator', 5)->nullable();
 
                 $table->boolean('is_product')->default(false);
                 $table->integer('product_id')->unsigned()->nullable();

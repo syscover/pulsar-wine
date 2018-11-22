@@ -76,7 +76,7 @@ type WineWine {
     country_id: String!
     data: Object
     data_lang: [String]
-    decanter: Int
+    decanter: String
     family_id: Int
     grapes: [WineGrape]
     id: Int!
@@ -85,13 +85,13 @@ type WineWine {
     lang_id: String
     name: String!
     pairings: [WinePairing]
-    parker: Int
-    penin: Int
+    parker: String
+    penin: String
     presentation_id: Int
     product_id: Int
     production: String
     score_average: Float
-    suckling: Int
+    suckling: String
     tasting: String
     tasting_look: String
     tasting_nose: String
@@ -115,7 +115,7 @@ type WineWine {
     vineyard_aging: String
     vineyard_bottling: String
     vintage: Int
-    wine_spectator: Int
+    wine_spectator: String
     winery_id: Int!
 
     # Marketable columns
