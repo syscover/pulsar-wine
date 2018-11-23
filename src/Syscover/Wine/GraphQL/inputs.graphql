@@ -72,6 +72,7 @@ input WineWineInput {
     data: Object
     data_lang: [String]
     decanter: String
+    description: String
     family_id: Int
     grapes_id: Object
     grapes_rel: [Int]

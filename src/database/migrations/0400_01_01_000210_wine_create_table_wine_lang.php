@@ -23,6 +23,8 @@ class WineCreateTableWineLang extends Migration
                 $table->string('name');
                 $table->string('slug');
 
+                $table->text('description')->nullable();                // descripción general
+
                 $table->string('production')->nullable();               // number of bottles produced
 
                 // tasting
