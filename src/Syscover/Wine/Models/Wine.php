@@ -17,7 +17,7 @@ class Wine extends CoreModel
     use Translatable;
     use Marketable;
 
-	protected $table        = 'wine_wine';
+    protected $table        = 'wine_wine';
     protected $fillable     = ['family_id', 'type_id', 'vintage', 'winery_id', 'appellation_id', 'presentation_id', 'abv', 'country_id', 'territorial_area_1_id', 'territorial_area_2_id', 'territorial_area_3_id', 'score_average', 'parker', 'suckling', 'penin', 'decanter', 'wine_spectator', 'is_product', 'product_id', 'data_lang', 'data'];
     protected $casts        = [
         'is_product'                => 'boolean',
@@ -43,12 +43,16 @@ class Wine extends CoreModel
     public static function validate($data)
     {
         return Validator::make($data, static::$rules);
-	}
+    }
 
     public function scopeBuilder($query)
     {
         return $query
             ->join('wine_wine_lang', 'wine_wine.id', '=', 'wine_wine_lang.id')
+            ->join('admin_country', function($join) {
+                $join->on('wine_wine.country_id', '=', 'admin_country.id')
+                    ->on('wine_wine_lang.lang_id', '=', 'admin_country.lang_id');
+            })
             ->leftJoin('market_product', function ($join) {
                 $join->on('wine_wine.id', '=', 'market_product.object_id')
                     ->where('market_product.object_type', '=', 'Syscover\Wine\Models\Wine');
@@ -98,13 +102,13 @@ class Wine extends CoreModel
     public function grapes()
     {
         return $this->belongsToMany(
-                Grape::class,
-                'wine_wines_grapes',
-                'wine_id',
-                'grape_id',
-                'id',
-                'id'
-            )
+            Grape::class,
+            'wine_wines_grapes',
+            'wine_id',
+            'grape_id',
+            'id',
+            'id'
+        )
             ->as('composition')
             ->withPivot('percentage');
     }
