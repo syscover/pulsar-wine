@@ -20,7 +20,7 @@ class WineCreateTableWinesAwards extends Migration {
 				$table->integer('wine_id')->unsigned();
 				$table->integer('award_id')->unsigned();
 
-				$table->primary(['wine_id', 'award_id'], 'pk01_wine_wines_awards');
+				$table->primary(['wine_id', 'award_id']);
 			});
 		}
 	}

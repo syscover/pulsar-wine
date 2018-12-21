@@ -20,7 +20,7 @@ class WineCreateTableWinesPairings extends Migration {
 				$table->integer('wine_id')->unsigned();
 				$table->integer('pairing_id')->unsigned();
 
-				$table->primary(['wine_id', 'pairing_id'], 'pk01_wine_wines_pairings');
+				$table->primary(['wine_id', 'pairing_id']);
 			});
 		}
 	}

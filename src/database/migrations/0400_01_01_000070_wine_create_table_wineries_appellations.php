@@ -20,7 +20,7 @@ class WineCreateTableWineriesAppellations extends Migration {
 				$table->integer('winery_id')->unsigned();
 				$table->integer('appellation_id')->unsigned();
 
-				$table->primary(['winery_id', 'appellation_id'], 'pk01_wine_wineries_appellations');
+				$table->primary(['winery_id', 'appellation_id']);
 			});
 		}
 	}
