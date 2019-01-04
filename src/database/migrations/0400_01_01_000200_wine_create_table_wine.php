@@ -48,8 +48,10 @@ class WineCreateTableWine extends Migration
                 $table->string('decanter', 5)->nullable();
                 $table->string('wine_spectator', 5)->nullable();
 
+                // marketable
                 $table->boolean('is_product')->default(false);
                 $table->integer('product_id')->unsigned()->nullable();
+
                 $table->json('data_lang')->nullable();
                 $table->json('data')->nullable();
 
