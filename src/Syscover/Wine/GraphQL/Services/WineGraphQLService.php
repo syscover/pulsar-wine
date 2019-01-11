@@ -21,7 +21,7 @@ class WineGraphQLService extends CoreGraphQLService
 
         if($args['payload']['is_product'])
         {
-            $args['payload']['object_type']  = Wine::class;
+            $args['payload']['object_type']  = $this->modelClassName;
             $args['payload']['object_id']    = $wine->id;
 
             MarketableService::create($args['payload'], $wine);
@@ -36,9 +36,9 @@ class WineGraphQLService extends CoreGraphQLService
 
         if($args['payload']['is_product'])
         {
-            $product = Product::where('object_type', Wine::class)->where('object_id', $wine->id)->first();
+            $product = Product::where('object_type', $this->modelClassName)->where('object_id', $wine->id)->first();
 
-            $args['payload']['object_type']  = Wine::class;
+            $args['payload']['object_type']  = $this->modelClassName;
             $args['payload']['object_id']    = $wine->id;
             if($product)
             {
@@ -54,7 +54,7 @@ class WineGraphQLService extends CoreGraphQLService
         else
         {
             // delete product
-            $product = Product::where('object_type', Wine::class)->where('object_id', $wine->id)->first();
+            $product = Product::where('object_type', $this->modelClassName)->where('object_id', $wine->id)->first();
             if($product)
             {
                 // if there are any product, delete all products from all langs, set base_lang to delete all langs
@@ -74,7 +74,7 @@ class WineGraphQLService extends CoreGraphQLService
         AttachmentService::deleteAttachments($args['id'], $this->modelClassName, $args['lang_id']);
 
         // delete product
-        $product = Product::where('object_type', Wine::class)->where('object_id', $wine->id)->first();
+        $product = Product::where('object_type', $this->modelClassName)->where('object_id', $wine->id)->first();
         if($product)
         {
             SQLService::deleteRecord($product->id, Product::class, $args['lang_id'], ProductLang::class);

@@ -1,11 +1,14 @@
 <?php namespace Syscover\Wine\Services;
 
 use Syscover\Admin\Services\AttachmentService;
+use Syscover\Admin\Traits\Attachable;
 use Syscover\Wine\Models\Wine;
 use Syscover\Wine\Models\WineLang;
 
 class WineService
 {
+    use Attachable;
+
     public static function create($object)
     {
         self::checkCreate($object);
@@ -35,14 +38,14 @@ class WineService
         $wine->pairings()->sync($object['pairings_id']);
 
         // set attachments
-        if(isset($object['attachments']) && is_array($object['attachments']))
-        {
-            // first save libraries to get id
-            $attachments = AttachmentService::storeAttachmentsLibrary($object['attachments']);
-
-            // then save attachments
-            AttachmentService::storeAttachments($attachments, 'storage/app/public/wine/wines', 'storage/wine/wines', Wine::class, $wine->id, $wine->lang_id);
-        }
+        self::createAttachments(
+            $object['attachments'],
+            'storage/app/public/wine/wines',
+            'storage/wine/wines',
+            Wine::class,
+            $wine->id,
+            $wine->lang_id
+        );
 
         return $wine;
     }
@@ -67,15 +70,15 @@ class WineService
         $wine->awards()->sync($object['awards_id']);
         $wine->pairings()->sync($object['pairings_id']);
 
-        // set attachments
-        if(isset($object['attachments']) && is_array($object['attachments']))
-        {
-            // first save libraries to get id
-            $attachments = AttachmentService::storeAttachmentsLibrary($object['attachments']);
-
-            // then save attachments
-            AttachmentService::updateAttachments($attachments, 'storage/app/public/wine/wines', 'storage/wine/wines', Wine::class, $wine->id,  $wine->lang_id);
-        }
+        // update attachments
+        self::updateAttachments(
+            $object['attachments'],
+            'storage/app/public/wine/wines',
+            'storage/wine/wines',
+            Wine::class,
+            $wine->id,
+            $wine->lang_id
+        );
 
         return $wine;
     }
