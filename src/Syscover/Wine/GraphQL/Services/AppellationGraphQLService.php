@@ -6,6 +6,6 @@ use Syscover\Wine\Services\AppellationService;
 
 class AppellationGraphQLService extends CoreGraphQLService
 {
-    protected $modelClassName = Appellation::class;
+    protected $model = Appellation::class;
     protected $serviceClassName = AppellationService::class;
 }

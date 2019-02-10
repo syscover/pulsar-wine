@@ -6,6 +6,6 @@ use Syscover\Wine\Services\PairingService;
 
 class PairingGraphQLService extends CoreGraphQLService
 {
-    protected $modelClassName = Pairing::class;
+    protected $model = Pairing::class;
     protected $serviceClassName = PairingService::class;
 }

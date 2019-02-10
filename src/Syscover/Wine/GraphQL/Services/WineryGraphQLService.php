@@ -9,16 +9,16 @@ use Syscover\Wine\Services\WineryService;
 
 class WineryGraphQLService extends CoreGraphQLService
 {
-    protected $modelClassName = Winery::class;
+    protected $model = Winery::class;
     protected $serviceClassName = WineryService::class;
 
     public function delete($root, array $args)
     {
         // delete object
-        $wine = SQLService::deleteRecord($args['id'], $this->modelClassName, $args['lang_id'], WineryLang::class);
+        $wine = SQLService::deleteRecord($args['id'], get_class($this->model), $args['lang_id'], WineryLang::class);
 
         // delete attachments object
-        AttachmentService::deleteAttachments($args['id'], $this->modelClassName, $args['lang_id']);
+        AttachmentService::deleteAttachments($args['id'], get_class($this->model), $args['lang_id']);
 
         return $wine;
     }

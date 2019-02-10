@@ -6,6 +6,6 @@ use Syscover\Wine\Services\FamilyService;
 
 class FamilyGraphQLService extends CoreGraphQLService
 {
-    protected $modelClassName = Family::class;
+    protected $model = Family::class;
     protected $serviceClassName = FamilyService::class;
 }

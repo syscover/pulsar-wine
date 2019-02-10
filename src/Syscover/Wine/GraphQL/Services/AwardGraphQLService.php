@@ -6,6 +6,6 @@ use Syscover\Wine\Services\AwardService;
 
 class AwardGraphQLService extends CoreGraphQLService
 {
-    protected $modelClassName = Award::class;
+    protected $model = Award::class;
     protected $serviceClassName = AwardService::class;
 }

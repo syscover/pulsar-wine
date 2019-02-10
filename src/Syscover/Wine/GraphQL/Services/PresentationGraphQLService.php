@@ -6,6 +6,6 @@ use Syscover\Wine\Services\PresentationService;
 
 class PresentationGraphQLService extends CoreGraphQLService
 {
-    protected $modelClassName = Presentation::class;
+    protected $model = Presentation::class;
     protected $serviceClassName = PresentationService::class;
 }
