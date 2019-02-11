@@ -7,5 +7,5 @@ use Syscover\Wine\Services\GrapeService;
 class GrapeGraphQLService extends CoreGraphQLService
 {
     protected $model = Grape::class;
-    protected $serviceClassName = GrapeService::class;
+    protected $service = GrapeService::class;
 }

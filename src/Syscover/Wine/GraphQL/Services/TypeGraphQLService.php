@@ -7,5 +7,5 @@ use Syscover\Wine\Services\TypeService;
 class TypeGraphQLService extends CoreGraphQLService
 {
     protected $model = Type::class;
-    protected $serviceClassName = TypeService::class;
+    protected $service = TypeService::class;
 }

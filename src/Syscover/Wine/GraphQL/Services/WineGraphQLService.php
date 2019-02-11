@@ -13,7 +13,7 @@ use Syscover\Wine\Services\WineService;
 class WineGraphQLService extends CoreGraphQLService
 {
     protected $model = Wine::class;
-    protected $serviceClassName = WineService::class;
+    protected $service = WineService::class;
 
     public function create($root, array $args)
     {
