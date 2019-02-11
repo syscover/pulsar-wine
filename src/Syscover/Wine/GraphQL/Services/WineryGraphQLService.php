@@ -9,8 +9,11 @@ use Syscover\Wine\Services\WineryService;
 
 class WineryGraphQLService extends CoreGraphQLService
 {
-    protected $model = Winery::class;
-    protected $service = WineryService::class;
+    public function __construct(Winery $model, WineryService $service)
+    {
+        $this->model = $model;
+        $this->service = $service;
+    }
 
     public function delete($root, array $args)
     {
