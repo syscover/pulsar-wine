@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use Syscover\Wine\Models\Winery;
 use Syscover\Wine\Models\WineryLang;
 
-class WineWineryTableSeeder extends Seeder {
+class WineWinerySeeder extends Seeder {
 
     public function run()
     {
@@ -20,5 +20,5 @@ class WineWineryTableSeeder extends Seeder {
 
 /*
  * Command to run:
- * php artisan db:seed --class="WineWineryTableSeeder"
+ * php artisan db:seed --class="WineWinerySeeder"
  */

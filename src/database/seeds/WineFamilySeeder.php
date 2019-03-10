@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Syscover\Wine\Models\Family;
 
-class WineFamilyTableSeeder extends Seeder {
+class WineFamilySeeder extends Seeder {
 
     public function run()
     {
@@ -19,5 +19,5 @@ class WineFamilyTableSeeder extends Seeder {
 
 /*
  * Command to run:
- * php artisan db:seed --class="WineFamilyTableSeeder"
+ * php artisan db:seed --class="WineFamilySeeder"
  */

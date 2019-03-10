@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Syscover\Wine\Models\Appellation;
 
-class WineAppellationTableSeeder extends Seeder {
+class WineAppellationSeeder extends Seeder {
 
     public function run()
     {
@@ -84,5 +84,5 @@ class WineAppellationTableSeeder extends Seeder {
 
 /*
  * Command to run:
- * php artisan db:seed --class="WineAppellationTableSeeder"
+ * php artisan db:seed --class="WineAppellationSeeder"
  */

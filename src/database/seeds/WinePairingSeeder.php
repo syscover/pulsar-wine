@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Syscover\Wine\Models\Pairing;
 
-class WinePairingTableSeeder extends Seeder {
+class WinePairingSeeder extends Seeder {
 
     public function run()
     {
@@ -60,5 +60,5 @@ class WinePairingTableSeeder extends Seeder {
 
 /*
  * Command to run:
- * php artisan db:seed --class="WinePairingTableSeeder"
+ * php artisan db:seed --class="WinePairingSeeder"
  */

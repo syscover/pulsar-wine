@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Syscover\Admin\Models\Package;
 
-class WinePackageTableSeeder extends Seeder
+class WinePackageSeeder extends Seeder
 {
     public function run()
     {
@@ -15,5 +15,5 @@ class WinePackageTableSeeder extends Seeder
 
 /*
  * Command to run:
- * php artisan db:seed --class="WinePackageTableSeeder"
+ * php artisan db:seed --class="WinePackageSeeder"
  */

@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Syscover\Admin\Models\Resource;
 
-class WineResourceTableSeeder extends Seeder {
+class WineResourceSeeder extends Seeder {
 
     public function run()
     {
@@ -11,6 +11,9 @@ class WineResourceTableSeeder extends Seeder {
             ['id' => 'wine',                        'name' => 'Wine Package',                           'package_id' => 400],
             ['id' => 'wine-wine',                   'name' => 'Wines',                                  'package_id' => 400],
             ['id' => 'wine-winery',                 'name' => 'Wineries',                               'package_id' => 400],
+
+            // Tables
+            ['id' => 'wine-table',                  'name' => 'Tables',                                 'package_id' => 400],
             ['id' => 'wine-appellation',            'name' => 'Appellations',                           'package_id' => 400],
             ['id' => 'wine-family',                 'name' => 'Families',                               'package_id' => 400],
             ['id' => 'wine-type',                   'name' => 'Types',                                  'package_id' => 400],
@@ -24,5 +27,5 @@ class WineResourceTableSeeder extends Seeder {
 
 /*
  * Command to run:
- * php artisan db:seed --class="WineResourceTableSeeder"
+ * php artisan db:seed --class="WineResourceSeeder"
  */
