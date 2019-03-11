@@ -22,7 +22,7 @@ class WineryService
         $winery = WineryLang::create(self::builder($object, ['id', 'lang_id', 'excerpt', 'header', 'description', 'data']));
 
         // winery already is create, it's not necessary update winery with data_lang value
-        Winery::addDataLang($object['lang_id'], $object['id']);
+        Winery::getDataLang($object['lang_id'], $object['id']);
 
         // get winery instance, to get every relations
         $winery = Winery::builder()

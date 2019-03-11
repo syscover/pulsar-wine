@@ -10,7 +10,7 @@ class AwardService
 
         if(empty($object['id'])) $object['id'] = next_id(Award::class);
 
-        $object['data_lang'] = Award::addDataLang($object['lang_id'], $object['id']);
+        $object['data_lang'] = Award::getDataLang($object['lang_id'], $object['id']);
 
         return Award::create(self::builder($object));
     }

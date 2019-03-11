@@ -10,7 +10,7 @@ class FamilyService
 
         if(empty($object['id'])) $object['id'] = next_id(Family::class);
 
-        $object['data_lang'] = Family::addDataLang($object['lang_id'], $object['id']);
+        $object['data_lang'] = Family::getDataLang($object['lang_id'], $object['id']);
 
         return Family::create(self::builder($object));
     }

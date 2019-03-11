@@ -10,7 +10,7 @@ class PresentationService
 
         if(empty($object['id'])) $object['id'] = next_id(Presentation::class);
 
-        $object['data_lang'] = Presentation::addDataLang($object['lang_id'], $object['id']);
+        $object['data_lang'] = Presentation::getDataLang($object['lang_id'], $object['id']);
 
         return Presentation::create(self::builder($object));
     }

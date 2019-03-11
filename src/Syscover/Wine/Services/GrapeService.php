@@ -10,7 +10,7 @@ class GrapeService
 
         if(empty($object['id'])) $object['id'] = next_id(Grape::class);
 
-        $object['data_lang'] = Grape::addDataLang($object['lang_id'], $object['id']);
+        $object['data_lang'] = Grape::getDataLang($object['lang_id'], $object['id']);
 
         return Grape::create(self::builder($object));
     }

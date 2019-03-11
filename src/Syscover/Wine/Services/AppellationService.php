@@ -10,7 +10,7 @@ class AppellationService
 
         if(empty($object['id'])) $object['id'] = next_id(Appellation::class);
 
-        $object['data_lang'] = Appellation::addDataLang($object['lang_id'], $object['id']);
+        $object['data_lang'] = Appellation::getDataLang($object['lang_id'], $object['id']);
 
         return Appellation::create(self::builder($object));
     }

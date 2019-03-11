@@ -10,7 +10,7 @@ class TypeService
 
         if(empty($object['id'])) $object['id'] = next_id(Type::class);
 
-        $object['data_lang'] = Type::addDataLang($object['lang_id'], $object['id']);
+        $object['data_lang'] = Type::getDataLang($object['lang_id'], $object['id']);
 
         return Type::create(self::builder($object));
     }

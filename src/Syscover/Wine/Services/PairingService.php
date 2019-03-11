@@ -10,7 +10,7 @@ class PairingService
 
         if(empty($object['id'])) $object['id'] = next_id(Pairing::class);
 
-        $object['data_lang'] = Pairing::addDataLang($object['lang_id'], $object['id']);
+        $object['data_lang'] = Pairing::getDataLang($object['lang_id'], $object['id']);
 
         return Pairing::create(self::builder($object));
     }

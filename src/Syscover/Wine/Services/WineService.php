@@ -25,7 +25,7 @@ class WineService
         $wine = WineLang::create(self::builder($object, ['id', 'lang_id', 'name', 'slug', 'description', 'production', 'tasting', 'tasting_look', 'tasting_nose', 'tasting_mouth', 'tasting_temperature', 'tasting_consumption', 'vineyard', 'vineyard_name', 'vineyard_area', 'vineyard_description', 'vineyard_age', 'vineyard_soil', 'vineyard_weather', 'vineyard_performance', 'vineyard_vintage', 'vineyard_vinification', 'vineyard_aging', 'vineyard_bottling', 'data']));
 
         // wine already is create, it's not necessary update wine with data_lang value
-        Wine::addDataLang($object['lang_id'], $object['id']);
+        Wine::getDataLang($object['lang_id'], $object['id']);
 
         // get wine instance, to get every relations
         $wine = Wine::builder()
