@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Syscover\Admin\Models\Attachment;
-use Syscover\Admin\Traits\Translatable;
+use Syscover\Admin\Traits\Langable;
 use Syscover\Core\Models\CoreModel;
 use Syscover\Market\Traits\Marketable;
 
@@ -14,7 +14,7 @@ use Syscover\Market\Traits\Marketable;
 
 class Wine extends CoreModel
 {
-    use Translatable;
+    use Langable;
     use Marketable;
 
     protected $table        = 'wine_wine';

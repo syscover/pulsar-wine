@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Syscover\Admin\Models\Attachment;
-use Syscover\Admin\Traits\Translatable;
+use Syscover\Admin\Traits\Langable;
 use Syscover\Core\Models\CoreModel;
 
 /**
@@ -13,7 +13,7 @@ use Syscover\Core\Models\CoreModel;
 
 class Winery extends CoreModel
 {
-    use Translatable;
+    use Langable;
 
 	protected $table        = 'wine_winery';
     protected $fillable     = ['name', 'slug', 'country_id', 'data_lang'];

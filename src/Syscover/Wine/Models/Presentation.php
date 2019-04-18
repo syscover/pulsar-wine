@@ -2,7 +2,7 @@
 
 use Syscover\Core\Models\CoreModel;
 use Illuminate\Support\Facades\Validator;
-use Syscover\Admin\Traits\Translatable;
+use Syscover\Admin\Traits\Langable;
 
 /**
  * Class Presentation
@@ -11,7 +11,7 @@ use Syscover\Admin\Traits\Translatable;
 
 class Presentation extends CoreModel
 {
-    use Translatable;
+    use Langable;
 
 	protected $table        = 'wine_presentation';
     protected $primaryKey   = 'ix';

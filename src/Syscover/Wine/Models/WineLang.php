@@ -1,7 +1,7 @@
 <?php namespace Syscover\Wine\Models;
 
 use Illuminate\Support\Facades\Validator;
-use Syscover\Admin\Traits\Translatable;
+use Syscover\Admin\Traits\Langable;
 use Syscover\Core\Models\CoreModel;
 
 /**
@@ -11,7 +11,7 @@ use Syscover\Core\Models\CoreModel;
 
 class WineLang extends CoreModel
 {
-    use Translatable;
+    use Langable;
 
 	protected $table        = 'wine_wine_lang';
     protected $primaryKey   = 'ix';
