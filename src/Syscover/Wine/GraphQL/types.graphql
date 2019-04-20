@@ -3,7 +3,7 @@ type WineAppellation {
     description: String
     id: Int!
     ix: Int!
-    lang_id: String!
+    lang_id: Int!
     name: String!
     slug: String!
 }
@@ -12,7 +12,7 @@ type WineAward {
     data_lang: [String]!
     id: Int!
     ix: Int!
-    lang_id: String!
+    lang_id: Int!
     name: String!
     slug: String!
 }
@@ -21,7 +21,7 @@ type WineFamily {
     data_lang: [String]!
     id: Int!
     ix: Int!
-    lang_id: String!
+    lang_id: Int!
     name: String!
     slug: String!
 }
@@ -31,7 +31,7 @@ type WineGrape {
     description: String
     id: Int!
     ix: Int!
-    lang_id: String!
+    lang_id: Int!
     name: String!
     slug: String!
     composition: WineGrapeComposition
@@ -45,7 +45,7 @@ type WinePairing {
     data_lang: [String]!
     id: Int!
     ix: Int!
-    lang_id: String!
+    lang_id: Int!
     name: String!
     slug: String!
 }
@@ -54,7 +54,7 @@ type WinePresentation {
     data_lang: [String]!
     id: Int!
     ix: Int!
-    lang_id: String!
+    lang_id: Int!
     name: String!
     slug: String!
 }
@@ -63,7 +63,7 @@ type WineType {
     data_lang: [String]!
     id: Int!
     ix: Int!
-    lang_id: String!
+    lang_id: Int!
     name: String!
     slug: String!
 }
@@ -83,7 +83,7 @@ type WineWine {
     id: Int!
     is_product: Boolean!
     ix: Int!
-    lang_id: String
+    lang_id: Int
     name: String!
     pairings: [WinePairing]
     parker: String
@@ -130,7 +130,7 @@ type WineWine {
     enable_to: String
     ends_at: String
     fixed_cost: Float
-    lang_id: String
+    lang_id: Int
     limited_capacity: Int
     name: String
     parent_id: Int
@@ -150,7 +150,7 @@ type WineWinery {
     id: Int
     name: String!
     slug: String!
-    lang_id: String
+    lang_id: Int
     country_id: String!
     description: String
     excerpt: String
